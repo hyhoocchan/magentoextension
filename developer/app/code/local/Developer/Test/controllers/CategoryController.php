@@ -2,6 +2,10 @@
 
 class Developer_Test_CategoryController extends Mage_Core_Controller_Front_Action
 {
+    /*
+     * This is sample code to using Mage_Catalog_Model_Resource_Category_Tree to load
+     * category
+     */
     public function indexAction()
     {
         $catId = "3";
@@ -14,14 +18,14 @@ class Developer_Test_CategoryController extends Mage_Core_Controller_Front_Actio
         $tree->addCollectionData(null, Mage::app()->getStore()->getId(), $catId, true, false);
 
         $asCollection = $tree->getCollection();
-//        echo get_class($asCollection)."<br/>";
-//        foreach($asCollection as $item){
-//
-//            echo "<pre>";
-//            print_r($item->debug());
-//            echo "</pre>";
-//
-//        }
+        echo get_class($asCollection)."<br/>";
+        foreach($asCollection as $item){
+
+            echo "<pre>";
+            print_r($item->debug());
+            echo "</pre>";
+
+        }
         echo "<br/>";
         echo get_class($nodes);
         echo "<br/>";
@@ -42,10 +46,4 @@ class Developer_Test_CategoryController extends Mage_Core_Controller_Front_Actio
             }
         }
     }
-
-    public function showAction()
-    {
-    }
-
-   
 }
